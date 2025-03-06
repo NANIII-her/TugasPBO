@@ -92,18 +92,12 @@ public class UserInterface {
                         input.nextLine();
                         System.out.println("----------------------------------------------------------------------------------");
 
-                        boolean status1 = db.insert(nim, nama, alamat, semester, sks, ipk);
-                        if (status1 == true) {
-                            status = db.update(index, nim, nama, alamat, semester, sks, ipk);
-                            if (status == true) {
-                                System.out.println("DATA BERHASIL DIPERBAHARUI");
-                            } else {
-                                System.err.println("GAGAL MEMPERBAHARUI DATA");
-                                System.err.println("NIM " + nim + " sudah ada di dalam database");
-                            }
+                        status = db.update(index, nim, nama, alamat, semester, sks, ipk);
+                        if (status == true) {
+                            System.out.println("DATA BERHASIL DIPERBAHARUI");
                         } else {
-                            System.out.println("NIM " + nim + " sudah ada di dalam database");
                             System.err.println("GAGAL MEMPERBAHARUI DATA");
+                            System.err.println("NIM " + nim + " sudah ada di dalam database");
                         }
                         System.out.println("----------------------------------------------------------------------------------");
                         System.out.println();
